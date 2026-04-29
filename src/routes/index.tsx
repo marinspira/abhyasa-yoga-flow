@@ -70,7 +70,7 @@ function Index() {
           <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-primary leading-[0.95] text-balance animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Abhyāsa <span className="italic text-accent">Club</span>
           </h1>
-          <p className="mt-10 text-lg md:text-xl text-foreground/80 max-w-xl mx-auto leading-relaxed font-light animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="mt-10 text-lg md:text-xl text-foreground/80 max-w-xl mx-auto leading-relaxed font-light animate-fade-up hidden md:block" style={{ animationDelay: "0.2s" }}>
             Seu corpo pede calma. Sua mente não deixa.<br/>
             <span className="font-serif italic text-2xl md:text-3xl text-primary">É aqui que isso muda.</span>
           </p>
