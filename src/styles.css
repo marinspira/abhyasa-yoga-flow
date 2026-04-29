@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -62,21 +63,29 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.5rem;
+  /* Warm sand / sage / clay palette - earthy editorial yoga */
+  --background: oklch(0.972 0.012 85);
+  --foreground: oklch(0.245 0.025 60);
+  --card: oklch(0.985 0.008 80);
+  --card-foreground: oklch(0.245 0.025 60);
+  --popover: oklch(0.985 0.008 80);
+  --popover-foreground: oklch(0.245 0.025 60);
+  --primary: oklch(0.32 0.04 55); /* deep clay */
+  --primary-foreground: oklch(0.972 0.012 85);
+  --secondary: oklch(0.92 0.018 85);
+  --secondary-foreground: oklch(0.32 0.04 55);
+  --muted: oklch(0.93 0.012 80);
+  --muted-foreground: oklch(0.48 0.025 60);
+  --accent: oklch(0.62 0.085 50); /* terracotta */
+  --accent-foreground: oklch(0.985 0.008 80);
+  --sage: oklch(0.62 0.045 130);
+  --sand: oklch(0.88 0.025 80);
+  --ink: oklch(0.22 0.02 60);
+  --gradient-warm: linear-gradient(135deg, oklch(0.96 0.02 80), oklch(0.88 0.04 60));
+  --gradient-clay: linear-gradient(180deg, oklch(0.62 0.085 50), oklch(0.45 0.07 45));
+  --shadow-soft: 0 20px 60px -20px oklch(0.32 0.04 55 / 0.18);
+  --shadow-elegant: 0 30px 80px -30px oklch(0.32 0.04 55 / 0.35);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -132,6 +141,14 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@theme inline {
+  --color-sage: var(--sage);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -140,5 +157,30 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 }
+
+@layer utilities {
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .text-balance { text-wrap: balance; }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-clay { background: var(--gradient-clay); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.8s ease-out both; }
+
