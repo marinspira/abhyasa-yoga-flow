@@ -369,7 +369,7 @@ function Index() {
             <p className="mt-6 text-muted-foreground">Garantia de 7 dias. Se não for pra você, devolvemos 100% — sem perguntas.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
             <div className="rounded-3xl bg-card p-10 shadow-soft border border-border flex flex-col">
               <p className="text-xs tracking-[0.32em] uppercase text-muted-foreground mb-4">Mensal</p>
               <p className="font-serif text-6xl text-primary">R$ 89<span className="text-xl text-muted-foreground">/mês</span></p>
@@ -393,6 +393,18 @@ function Index() {
                 ))}
               </ul>
               <a href={CTA_ANUAL} className="mt-8 inline-flex justify-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-xs uppercase tracking-[0.2em] hover:bg-primary-foreground hover:text-primary transition">Assinar anual</a>
+            </div>
+
+            {/* Phone mockup — same height as the plan cards */}
+            <div className="hidden lg:flex items-stretch justify-center">
+              <div className="relative h-full w-[260px] rounded-[2.8rem] bg-ink p-3 shadow-elegant border-[3px] border-primary/80">
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-ink rounded-b-2xl z-10" />
+                <div className="relative h-full w-full rounded-[2.2rem] overflow-hidden bg-card">
+                  <img src={platformMockup} alt="Plataforma Abhyāsa Club no celular" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
+                  <p className="absolute bottom-5 left-0 right-0 text-center text-primary-foreground text-xs tracking-[0.3em] uppercase">Sua prática · Onde estiver</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
