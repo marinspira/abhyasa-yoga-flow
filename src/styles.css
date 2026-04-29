@@ -64,28 +64,28 @@
 
 :root {
   --radius: 0.5rem;
-  /* Warm sand / sage / clay palette - earthy editorial yoga */
-  --background: oklch(0.972 0.012 85);
-  --foreground: oklch(0.245 0.025 60);
-  --card: oklch(0.985 0.008 80);
-  --card-foreground: oklch(0.245 0.025 60);
-  --popover: oklch(0.985 0.008 80);
-  --popover-foreground: oklch(0.245 0.025 60);
-  --primary: oklch(0.32 0.04 55); /* deep clay */
-  --primary-foreground: oklch(0.972 0.012 85);
-  --secondary: oklch(0.92 0.018 85);
-  --secondary-foreground: oklch(0.32 0.04 55);
-  --muted: oklch(0.93 0.012 80);
-  --muted-foreground: oklch(0.48 0.025 60);
-  --accent: oklch(0.62 0.085 50); /* terracotta */
-  --accent-foreground: oklch(0.985 0.008 80);
-  --sage: oklch(0.62 0.045 130);
-  --sand: oklch(0.88 0.025 80);
-  --ink: oklch(0.22 0.02 60);
-  --gradient-warm: linear-gradient(135deg, oklch(0.96 0.02 80), oklch(0.88 0.04 60));
-  --gradient-clay: linear-gradient(180deg, oklch(0.62 0.085 50), oklch(0.45 0.07 45));
-  --shadow-soft: 0 20px 60px -20px oklch(0.32 0.04 55 / 0.18);
-  --shadow-elegant: 0 30px 80px -30px oklch(0.32 0.04 55 / 0.35);
+  /* Original Abhyāsa palette: soft sky-blue + off-white + deep ink */
+  --background: oklch(0.985 0.004 95); /* off-white #fcfbf8-ish */
+  --foreground: oklch(0.18 0.02 260); /* near-black ink */
+  --card: oklch(0.985 0.004 95);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(0.985 0.004 95);
+  --popover-foreground: oklch(0.18 0.02 260);
+  --primary: oklch(0.18 0.02 260); /* deep ink — main text/buttons */
+  --primary-foreground: oklch(0.985 0.004 95);
+  --secondary: oklch(0.93 0.025 240); /* soft sky blue (about section bg) */
+  --secondary-foreground: oklch(0.18 0.02 260);
+  --muted: oklch(0.94 0.012 240);
+  --muted-foreground: oklch(0.42 0.02 260);
+  --accent: oklch(0.18 0.02 260); /* keep accents in ink — original is monochrome */
+  --accent-foreground: oklch(0.985 0.004 95);
+  --sky: oklch(0.86 0.04 230); /* hero sky tone */
+  --sand: oklch(0.93 0.025 240);
+  --ink: oklch(0.14 0.018 260);
+  --gradient-warm: linear-gradient(135deg, oklch(0.95 0.02 240), oklch(0.88 0.035 235));
+  --gradient-clay: linear-gradient(180deg, oklch(0.18 0.02 260), oklch(0.10 0.015 260));
+  --shadow-soft: 0 20px 60px -20px oklch(0.18 0.02 260 / 0.15);
+  --shadow-elegant: 0 30px 80px -30px oklch(0.18 0.02 260 / 0.28);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
