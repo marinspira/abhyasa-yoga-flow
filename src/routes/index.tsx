@@ -3,12 +3,14 @@ import heroImg from "@/assets/abhyasa/hero.jpg";
 import about1 from "@/assets/abhyasa/about1.jpg";
 import bruna1 from "@/assets/abhyasa/bruna1.jpg";
 import bruna2 from "@/assets/abhyasa/bruna2.jpg";
-import handstandImg from "@/assets/abhyasa/handstand.jpg";
-import backpainImg from "@/assets/abhyasa/backpain.jpg";
+import handstandImg from "@/assets/abhyasa/hand.png";
+import backpainImg from "@/assets/abhyasa/colunaaa.png";
 import g1 from "@/assets/abhyasa/level-iniciante.jpg";
-import g2 from "@/assets/abhyasa/level-intermediario.jpg";
-import g3 from "@/assets/abhyasa/level-avancado.jpg";
-import g4 from "@/assets/abhyasa/gallery4.jpg";
+import g2 from "@/assets/abhyasa/nidaa.png";
+import g3 from "@/assets/abhyasa/meditacao.png";
+import g4 from "@/assets/abhyasa/visana.png";
+import g5 from "@/assets/abhyasa/image2.png";
+import g6 from "@/assets/abhyasa/image2.png";
 import fb1 from "@/assets/abhyasa/fb1.jpg";
 import fb2 from "@/assets/abhyasa/fb2.jpg";
 import fb3 from "@/assets/abhyasa/fb3.jpg";
@@ -57,6 +59,7 @@ function Index() {
             <a href="#niveis" className="hover:text-foreground transition">Níveis</a>
             <a href="#bruna" className="hover:text-foreground transition">Sobre</a>
             <a href="#planos" className="hover:text-foreground transition">Planos</a>
+            <a href="#ebook" className="hover:text-foreground transition">Ebook Gratuito</a>
           </div>
           <a href={CTA_MENSAL} className="text-xs uppercase tracking-[0.2em] bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-ink transition">Assinar</a>
         </div>
@@ -75,10 +78,11 @@ function Index() {
             Seu corpo pede calma. Sua mente não deixa.<br/>
             <span className="font-serif italic text-2xl md:text-3xl text-primary">É aqui que isso muda.</span>
           </p>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <CTAButton href={CTA_MENSAL}>Quero começar hoje</CTAButton>
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Acesso imediato · Cancele quando quiser</p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <CTAButton href={CTA_MENSAL}>Quero começar a praticar hoje</CTAButton>
           </div>
+            <p className="mt-5 text-xs tracking-[0.2em] uppercase text-muted-foreground">Acesso imediato · Cancele quando quiser</p>
+
         </div>
       </header>
 
@@ -89,7 +93,6 @@ function Index() {
             <SectionLabel>O coração do Abhyāsa</SectionLabel>
             <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-[1.05] text-balance">
               Para <span className="italic text-accent">todos</span> os níveis.<br/>
-              <span className="text-muted-foreground/70">Sem exceção.</span>
             </h2>
             <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
               Não importa se é seu primeiro tapete ou se você já pratica há anos. Cada aula traz variações, adaptações e camadas — para o corpo que você tem hoje.
@@ -100,10 +103,10 @@ function Index() {
             {[
               { tag: "Iniciante", title: "Começar com gentileza", desc: "Aulas curtas, fundamentos, respiração. Para quem nunca praticou — ou está voltando depois de muito tempo.", img: g1 },
               { tag: "Intermediário", title: "Aprofundar a prática", desc: "Flows mais longos, sequências dinâmicas, vinyasa e alinhamento refinado. Para construir consistência.", img: g2 },
-              { tag: "Avançado", title: "Explorar o limite", desc: "Inversões, equilíbrios, posturas complexas. Para quem quer ir além — com segurança e técnica.", img: g3 },
+              { tag: "Avançado", title: "Explorar o limite", desc: "Inversões, equilíbrios, posturas complexas. Para quem quer ir além — com segurança e técnica.", img: g5 },
             ].map((lvl, i) => (
               <div key={i} className="group relative overflow-hidden rounded-2xl bg-card shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-[5/5] overflow-hidden">
                   <img src={lvl.img} alt={lvl.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-7">
@@ -149,10 +152,10 @@ function Index() {
                 </div>
 
                 {/* hero video card */}
-                <div className="relative rounded-xl overflow-hidden mb-8 aspect-[16/7] group cursor-pointer">
+                <div className="relative rounded-xl overflow-hidden mb-8 aspect-[20/7] group cursor-pointer">
                   <img src={handstandImg} alt="Aula em destaque: Handstand" loading="lazy" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center h-300">
                     <div className="w-20 h-20 rounded-full bg-white/95 flex items-center justify-center shadow-elegant group-hover:scale-110 transition-transform">
                       <svg className="w-7 h-7 text-ink ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -203,7 +206,7 @@ function Index() {
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <img src={handstandImg} alt="Handstand na praia" loading="lazy" className="rounded-2xl shadow-elegant w-full h-[600px] object-cover" />
+            <img src={g6} alt="Handstand na praia" loading="lazy" className="rounded-2xl shadow-elegant w-full h-[600px] object-cover" />
             <div className="absolute -bottom-8 -right-8 hidden md:block bg-card rounded-2xl p-6 shadow-elegant max-w-[220px] border border-border">
               <p className="font-serif text-3xl text-accent">+ 12</p>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">trilhas avançadas</p>
@@ -238,7 +241,7 @@ function Index() {
       </section>
 
       {/* DOR NAS COSTAS */}
-      <section className="py-32 px-6 bg-gradient-warm">
+      <section id="ebook" className="py-32 px-6 bg-gradient-warm">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2 relative">
             <img src={backpainImg} alt="Yoga para alívio de dor nas costas" loading="lazy" className="rounded-2xl shadow-elegant w-full h-[600px] object-cover" />
@@ -264,7 +267,7 @@ function Index() {
               ))}
             </div>
             <div className="mt-10">
-              <CTAButton href={CTA_MENSAL} variant="outline">Aliviar minhas dores</CTAButton>
+              <CTAButton href={CTA_MENSAL} variant="outline">Baixar e-book gratuito</CTAButton>
             </div>
           </div>
         </div>
@@ -312,17 +315,6 @@ function Index() {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[g1, g2, g3, g4, about1, bruna1].map((img, i) => (
-            <div key={i} className={`overflow-hidden rounded-xl ${i === 0 || i === 3 ? "md:row-span-2 aspect-[3/5]" : "aspect-square"}`}>
-              <img src={img} alt="" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* FEEDBACKS */}
       <section className="py-32 px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
@@ -331,7 +323,7 @@ function Index() {
             <h2 className="font-serif text-5xl md:text-6xl text-primary text-balance">Feedbacks dos alunos</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-            {[fb1, fb2, fb3, fb4, fb5, fb6].map((img, i) => (
+            {[fb2, fb5, fb6].map((img, i) => (
               <div key={i} className="rounded-xl overflow-hidden bg-card shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1">
                 <img src={img} alt={`Depoimento ${i+1}`} loading="lazy" className="w-full h-auto object-cover" />
               </div>
@@ -383,16 +375,16 @@ function Index() {
             </div>
 
             <div className="relative rounded-3xl bg-primary text-primary-foreground p-10 shadow-elegant flex flex-col">
-              <span className="absolute -top-3 right-8 bg-accent text-accent-foreground text-[10px] tracking-[0.3em] uppercase px-4 py-1.5 rounded-full">Economize R$ 531</span>
+              <span className="absolute -top-3 right-8 bg-accent text-accent-foreground text-[10px] tracking-[0.3em] uppercase px-4 py-1.5 rounded-full">Economize <span className="text-lg opacity-70">R$ 531</span></span>
               <p className="text-xs tracking-[0.32em] uppercase text-accent mb-4">Anual</p>
-              <p className="font-serif text-6xl">12x R$ 51<span className="text-xl opacity-70">,40</span></p>
+              <p className="font-serif text-6xl"><span className="text-xl opacity-70">12x</span> R$ 51<span className="text-xl opacity-70">,40</span></p>
               <p className="text-sm opacity-70 mt-2">ou 1x de R$ 497 · Renovação automática</p>
               <ul className="mt-8 space-y-3 text-sm opacity-90 flex-1">
                 {["Acesso ilimitado às aulas", "Novas aulas toda semana", "Aulas ao vivo no Zoom", "Comunidade no WhatsApp", "Melhor custo-benefício"].map(b => (
                   <li key={b} className="flex gap-3"><span className="text-accent">✦</span>{b}</li>
                 ))}
               </ul>
-              <a href={CTA_ANUAL} className="mt-8 inline-flex justify-center px-8 py-4 rounded-full bg-accent text-accent-foreground text-xs uppercase tracking-[0.2em] hover:bg-primary-foreground hover:text-primary transition">Assinar anual</a>
+              <a href={CTA_ANUAL} className="mt-8 inline-flex justify-center px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] bg-primary-foreground text-primary transition">Assinar anual</a>
             </div>
 
             {/* Phone mockup — same height as the plan cards */}
