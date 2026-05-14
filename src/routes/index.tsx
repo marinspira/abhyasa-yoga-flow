@@ -17,7 +17,7 @@ import fb3 from "@/assets/abhyasa/fb3.jpg";
 import fb4 from "@/assets/abhyasa/fb4.jpg";
 import fb5 from "@/assets/abhyasa/fb5.jpg";
 import fb6 from "@/assets/abhyasa/fb6.jpg";
-import platformPreview from "@/assets/abhyasa/image copy.png";
+import platformPreview from "@/assets/abhyasa/image-copy.png";
 import mobilePreview from "@/assets/abhyasa/mobile.png";
 
 export const Route = createFileRoute("/")({
