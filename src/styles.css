@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 /*
  * Design system definition.
@@ -73,7 +70,7 @@
   --popover-foreground: oklch(0.18 0.02 260);
   --primary: oklch(0.18 0.02 260); /* deep ink — main text/buttons */
   --primary-foreground: oklch(0.985 0.004 95);
-  --secondary: oklch(0.93 0.025 240); /* soft sky blue (about section bg) */
+    --secondary: oklch(0.93 0.025 240); /* soft sky blue (about section bg) */
   --secondary-foreground: oklch(0.18 0.02 260);
   --muted: oklch(0.94 0.012 240);
   --muted-foreground: oklch(0.42 0.02 260);
@@ -88,9 +85,9 @@
   --shadow-elegant: 0 30px 80px -30px oklch(0.18 0.02 260 / 0.28);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.915 0.012 250);
+  --input: oklch(0.915 0.012 250);
+  --ring: oklch(0.72 0.05 250);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
