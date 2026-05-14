@@ -201,7 +201,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="mt-10 md:mt-0 flex justify-center">
+            <div className="mt-10 flex justify-center">
               <CTAButton href="#planos">Acessar a plataforma</CTAButton>
             </div>
 
