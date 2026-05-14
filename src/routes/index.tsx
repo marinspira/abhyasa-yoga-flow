@@ -201,7 +201,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 md:mt-0 flex justify-center">
               <CTAButton href="#planos">Acessar a plataforma</CTAButton>
             </div>
 
@@ -461,7 +461,7 @@ function Index() {
               </a>
             </div>
 
-            <div className="relative rounded-3xl bg-gradient-warm text-primary px-8 py-10 md:px-9 md:py-14 shadow-elegant flex flex-col md:scale-[1.035] ring-2 ring-accent/70">
+            <div className="relative mt-10 rounded-3xl bg-gradient-warm text-primary px-8 py-10 md:px-9 md:py-14 shadow-elegant flex flex-col md:scale-[1.035] ring-2 ring-accent/70">
               <span className="absolute -top-5 left-1/2 -translate-x-1/2 w-max min-w-[170px] rounded-[8px] bg-accent-foreground px-8 py-2 text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-accent shadow-elegant whitespace-nowrap">
                 Melhor escolha
               </span>
