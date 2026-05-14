@@ -19,6 +19,7 @@ import fb5 from "@/assets/abhyasa/fb5.jpg";
 import fb6 from "@/assets/abhyasa/fb6.jpg";
 import platformPreview from "@/assets/abhyasa/image-copy.png";
 import mobilePreview from "@/assets/abhyasa/mobile.png";
+import mobile from "@/assets/abhyasa/mobile-top.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -107,10 +108,17 @@ function Index() {
 
       {/* HERO */}
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Mobile background: place the provided image at public/assets/hero-mobile.jpg */}
+        <div
+          className="absolute inset-0 w-full h-full bg-top bg-cover md:hidden"
+          style={{ backgroundImage: `url(${mobile})` }}
+          aria-hidden
+        />
+        {/* Desktop / md+ background */}
         <img
           src={heroImg}
           alt="Mulher praticando yoga ao ar livre"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
           width={1920}
           height={1080}
         />
