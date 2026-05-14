@@ -136,9 +136,9 @@ function Index() {
             className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <CTAButton href="#planos">Quero começar a praticar hoje</CTAButton>
+            <CTAButton href="#planos">Praticar Agora</CTAButton>
           </div>
-          <p className="mt-5 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+          <p className="mt-10 text-xs tracking-[0.2em] uppercase text-muted-foreground">
             Acesso imediato · Cancele quando quiser
           </p>
         </div>
@@ -149,15 +149,28 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <SectionLabel>A plataforma</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary text-balance">
               Aulas, trilhas e encontros
               <br /> para praticar no seu ritmo.
             </h2>
           </div>
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
+          <div className="relative mx-auto max-w-7xl">
+            {/* Mobile mockup */}
+            <div className="mx-auto block w-[190px] sm:w-[220px] md:hidden">
+              <div className="relative overflow-hidden rounded-[2.6rem] bg-ink p-2 shadow-elegant border-[3px] border-primary/80">
+                <div className="absolute top-3 left-1/2 z-10 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-ink" />
+                <img
+                  src={mobilePreview}
+                  alt="Tela mobile da plataforma Abhyāsa Club"
+                  loading="lazy"
+                  className="block h-auto w-full rounded-[2.1rem]"
+                />
+              </div>
+            </div>
+
             {/* Browser-style mockup */}
-            <div className="min-w-0">
+            <div className="mx-auto hidden max-w-5xl md:block">
               <div className="rounded-2xl bg-ink shadow-elegant overflow-hidden border border-primary/10">
                 {/* window bar */}
                 <div className="flex items-center gap-2 px-5 py-3 bg-ink/95 border-b border-white/5">
@@ -180,16 +193,8 @@ function Index() {
               </div>
             </div>
 
-            {/* Phone mockup */}
-            <div className="mx-auto w-[190px] sm:w-[220px] lg:w-[260px]">
-              <div className="relative overflow-hidden rounded-[2.6rem] bg-ink p-2 shadow-elegant border-[3px] border-primary/80">
-                <img
-                  src={mobilePreview}
-                  alt="Tela mobile da plataforma Abhyāsa Club"
-                  loading="lazy"
-                  className="block h-auto w-full rounded-[2.1rem]"
-                />
-              </div>
+            <div className="mt-10 flex justify-center">
+              <CTAButton href="#planos">Acessar a plataforma</CTAButton>
             </div>
 
             {/* floating decoration */}
@@ -209,7 +214,7 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <SectionLabel>O coração do Abhyāsa</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary leading-[1.05] text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary leading-[1.05] text-balance">
               Para <span className="italic text-accent">todos</span> os níveis.
               <br />
             </h2>
@@ -284,7 +289,7 @@ function Index() {
           </div>
           <div>
             <SectionLabel>Aprofunde-se</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary leading-[1.05] text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary leading-[1.05] text-balance">
               Aprenda <span className="italic text-accent">handstand</span>, inversões e posturas
               complexas.
             </h2>
@@ -317,7 +322,7 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <SectionLabel>Quem pratica conta</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary text-balance">
               Feedbacks dos alunos
             </h2>
           </div>
@@ -344,7 +349,7 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <SectionLabel>Na plataforma</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary text-balance">
               Um espaço para cultivar presença.
             </h2>
           </div>
@@ -395,7 +400,7 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <SectionLabel>Comece sua jornada</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary-foreground text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary-foreground text-balance">
               Escolha o plano que cabe em você.
             </h2>
             <p className="mt-6 text-primary-foreground/70">
@@ -578,7 +583,7 @@ function Index() {
           </div>
           <div className="lg:order-1">
             <SectionLabel>Cuide do seu corpo</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary leading-[1.05] text-balance">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary leading-[1.05] text-balance">
               Adeus, <span className="italic text-accent">dor nas costas</span>.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
@@ -610,7 +615,7 @@ function Index() {
           </div>
           <div className="lg:col-span-3">
             <SectionLabel>Sobre mim</SectionLabel>
-            <h2 className="font-serif md:text-6xl text-primary leading-[1.05]">
+            <h2 className="font-serif text-3xl md:text-6xl text-primary leading-[1.05]">
               Oi, aqui é a <span className="italic text-accent">Bruna Prais</span>.
             </h2>
             <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed">
@@ -637,7 +642,7 @@ function Index() {
       {/* ABHYĀSA — significado */}
       <section className="py-20 md:py-32 px-6 bg-primary text-primary-foreground text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif md:text-6xl leading-[1.05] text-balance">
+          <h2 className="font-serif text-3xl md:text-6xl leading-[1.05] text-balance">
             Por que <span className="italic">Abhyāsa</span>?
           </h2>
           <p className="mt-10 text-lg md:text-xl leading-relaxed text-primary-foreground/85 font-light">
