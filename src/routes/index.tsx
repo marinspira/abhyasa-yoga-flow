@@ -883,7 +883,7 @@ function Index() {
         aria-label="Fale no WhatsApp sobre aulas 1:1"
         className="fixed bottom-5 right-5 z-50 group flex items-center gap-3"
       >
-        <span className="inline-block bg-primary text-primary-foreground text-[10px] sm:text-xs tracking-[0.2em] uppercase px-3 sm:px-4 py-2 rounded-full shadow-elegant">
+        <span className="inline-block bg-white text-black text-[10px] sm:text-xs tracking-[0.2em] uppercase px-3 sm:px-4 py-2 rounded-full shadow-elegant">
           Aulas 1:1
         </span>
         <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-elegant hover:scale-105 transition-transform">
