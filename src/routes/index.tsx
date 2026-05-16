@@ -1,25 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/abhyasa/hero.png";
-import about1 from "@/assets/abhyasa/about1.jpg";
-import bruna1 from "@/assets/abhyasa/bruna1.jpg";
-import bruna2 from "@/assets/abhyasa/bruna2.jpg";
-import handstandImg from "@/assets/abhyasa/hand.png";
-import backpainImg from "@/assets/abhyasa/colunaaa.png";
-import g1 from "@/assets/abhyasa/level-iniciante.jpg";
-import g2 from "@/assets/abhyasa/nidaa.png";
-import g3 from "@/assets/abhyasa/meditacao.png";
-import g4 from "@/assets/abhyasa/visana.png";
-import g5 from "@/assets/abhyasa/image2.png";
-import g6 from "@/assets/abhyasa/image2.png";
-import fb1 from "@/assets/abhyasa/fb1.jpg";
-import fb2 from "@/assets/abhyasa/fb2.jpg";
-import fb3 from "@/assets/abhyasa/fb3.jpg";
-import fb4 from "@/assets/abhyasa/fb4.jpg";
-import fb5 from "@/assets/abhyasa/fb5.jpg";
-import fb6 from "@/assets/abhyasa/fb6.jpg";
-import platformPreview from "@/assets/abhyasa/image-copy.png";
-import mobilePreview from "@/assets/abhyasa/mobile.png";
-import mobile from "@/assets/abhyasa/mobile-top.png";
+import heroDesktopImg from "@/assets/abhyasa/hero-desktop.png";
+import heroMobileBgImg from "@/assets/abhyasa/hero-mobile-background.png";
+import platformDesktopPreviewImg from "@/assets/abhyasa/platform-desktop-preview.png";
+import platformMobilePreviewImg from "@/assets/abhyasa/platform-mobile-preview.png";
+import levelsBeginnerImg from "@/assets/abhyasa/levels-beginner-card.jpeg";
+import levelsIntermediateImg from "@/assets/abhyasa/levels-intermediate-card.jpeg";
+import levelsAdvancedImg from "@/assets/abhyasa/levels-advanced-card.jpeg";
+import inversionsFeatureImg from "@/assets/abhyasa/inversions-feature.jpeg";
+import ebookBackPainImg from "@/assets/abhyasa/ebook-back-pain-cover.jpeg";
+import aboutBrunaPortraitImg from "@/assets/abhyasa/about-bruna-portrait.jpg";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -37,13 +39,148 @@ export const Route = createFileRoute("/")({
         content:
           "Yoga online para iniciantes, intermediários e avançados. Handstand, dor nas costas, meditação. Acesso imediato.",
       },
-      { property: "og:image", content: heroImg },
+      { property: "og:image", content: heroDesktopImg },
     ],
   }),
 });
 
 const CTA_MENSAL = "https://pay.kiwify.com.br/IaED2lH";
 const CTA_ANUAL = "https://pay.kiwify.com.br/Kb2C0xd";
+
+const feedbackImages = Object.entries(
+  import.meta.glob("../assets/abhyasa/feedback-*", {
+    eager: true,
+    import: "default",
+  }),
+)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, value]) => value as string);
+
+const faqSections = [
+  {
+    title: "Sobre a plataforma",
+    items: [
+      {
+        question: "O que exatamente está incluído no Abhyasa Club?",
+        answer: [
+          "Ao entrar no Clube, você tem acesso a uma biblioteca completa de aulas gravadas, com yoga para todos os níveis, meditações guiadas, Yoga Nidra e flows temáticos organizados por duração, intensidade e intenção, como foco, descanso, energia, ciclo feminino e mais.",
+          "Além das gravadas, tem 1 aula ao vivo por semana via Zoom com a Bruna, onde você pratica em tempo real e recebe correções. E também o grupo exclusivo no WhatsApp, um espaço seguro para tirar dúvidas, compartilhar conquistas e se conectar com outras alunas.",
+          "Novas aulas são adicionadas toda semana. O clube está sempre crescendo.",
+        ],
+      },
+      {
+        question: "Quantas aulas tem disponíveis? Vou encontrar conteúdo suficiente?",
+        answer: [
+          "Sim, e o conteúdo cresce toda semana. A biblioteca já conta com mais de 70 aulas em diferentes durações, como 15, 30 e 45 minutos, e estilos, para você ter sempre uma opção que encaixa no seu dia.",
+          "Não é uma coleção estática. É um espaço vivo, que acompanha você conforme sua prática evolui.",
+        ],
+      },
+      {
+        question: "As aulas ao vivo são obrigatórias? E se eu não puder participar?",
+        answer: [
+          "Não são obrigatórias. Elas funcionam como um bônus para quem quiser praticar ao vivo e sentir a energia do grupo. Se você não puder estar presente, sem problema.",
+          "As aulas ficam gravadas e disponíveis para você assistir quando quiser. O Clube foi pensado para funcionar no seu tempo, no seu ritmo, sem pressão de agenda.",
+        ],
+      },
+      {
+        question: "Em qual plataforma ficam as aulas? Preciso instalar alguma coisa?",
+        answer: [
+          "As aulas ficam em uma plataforma online acessível pelo navegador, no computador, celular ou tablet. Não precisa instalar nada. Depois de confirmar seu pagamento, você recebe um e-mail com acesso imediato.",
+          "As aulas ao vivo acontecem pelo Zoom, que é gratuito e fácil de usar. Os links são enviados pelo grupo no WhatsApp.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre o nível e o estilo das aulas",
+    items: [
+      {
+        question: "Nunca pratiquei yoga na vida. Consigo acompanhar?",
+        answer: [
+          "Sim, e você está no lugar certo. O Abhyasa Club tem uma trilha pensada especialmente para quem está começando do zero, com aulas que explicam cada postura, mostram variações e nunca presumem que você já sabe alguma coisa.",
+          "A única coisa que você precisa trazer é o seu corpo, exatamente como ele é hoje.",
+          "Muitas das nossas alunas entraram sem nunca ter pisado em um estúdio de yoga. E continuam aqui.",
+        ],
+        highlight: true,
+      },
+      {
+        question: "Preciso ser flexível para praticar?",
+        answer: [
+          "Não. Flexibilidade é consequência da prática, não pré-requisito.",
+          "Todas as aulas têm variações para diferentes corpos e mobilidades. A Bruna sempre mostra como adaptar cada postura para o seu corpo de hoje, não para um corpo ideal que você deveria ter.",
+          "Se você chega travada, rígida ou sem saber o que seu corpo é capaz de fazer, esse espaço foi feito pra você.",
+        ],
+      },
+      {
+        question: "E se eu já pratico yoga há algum tempo? Vou encontrar desafio?",
+        answer: [
+          "Sim. A biblioteca tem aulas para diferentes níveis, do iniciante ao praticante mais experiente. Você vai encontrar flows mais intensos, Yoga Nidra para aprofundar a prática de relaxamento e meditações para ir além do básico.",
+          "Várias alunas que já praticavam entraram no Clube para aprofundar a consciência corporal e a conexão interna, e encontraram exatamente isso.",
+        ],
+      },
+      {
+        question: "Preciso de tapete ou equipamentos especiais?",
+        answer: [
+          "Um tapete de yoga é o básico recomendado, mas muitas aulas podem ser feitas em qualquer superfície confortável. Blocos de yoga são sugeridos em algumas práticas, sempre com alternativas simples, como livros e almofadas, para quem não tem.",
+          "Nada que você precise comprar antes de começar.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre pagamento e cancelamento",
+    items: [
+      {
+        question: "Qual a diferença entre o plano mensal e o anual?",
+        answer: [
+          "Os dois dão acesso completo à plataforma, com aulas gravadas, aulas ao vivo e grupo no WhatsApp.",
+          "A diferença está no compromisso e no valor: o plano anual sai por R$ 51,40 por mês, em R$ 497 à vista ou 12x, e representa uma economia de R$ 531 em relação ao mensal. É a melhor opção para quem quer criar uma prática consistente ao longo do tempo.",
+          "O plano mensal, de R$ 89 por mês, é ideal para quem quer experimentar antes de um compromisso maior, com liberdade de cancelar a qualquer momento.",
+        ],
+      },
+      {
+        question: "Posso cancelar quando quiser?",
+        answer: [
+          "Sim. O plano mensal pode ser cancelado a qualquer momento, sem multa e sem burocracia. Você continua com acesso até o fim do período pago.",
+          "O plano anual é um compromisso de 12 meses, mas também pode ser cancelado caso você não use o Clube dentro dos primeiros 7 dias, com reembolso total.",
+        ],
+      },
+      {
+        question: "Tem garantia? E se eu não gostar?",
+        answer: [
+          "Sim. A garantia é incondicional por 7 dias.",
+          "Entre, experimente com calma, assista às primeiras aulas, sinta o espaço. Se por qualquer motivo não for para você, sem julgamento e sem perguntas, é só mandar uma mensagem e devolvemos 100% do valor.",
+          "Você não tem nada a perder. Só a tensão nos ombros.",
+        ],
+      },
+      {
+        question: "Quais formas de pagamento são aceitas?",
+        answer: [
+          "Cartão de crédito, em até 12x no plano anual, Pix e boleto bancário. O acesso é liberado imediatamente após a confirmação do pagamento.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sobre a Bruna e a metodologia",
+    items: [
+      {
+        question: "Quem é a Bruna e qual é a formação dela?",
+        answer: [
+          "A Bruna Prais é professora de yoga formada na Tailândia, reikiana e praticante desde 2019. Mas, mais do que os títulos, ela é uma mulher real, que começou no yoga por dor nas costas, escoliose, e encontrou um caminho de volta para si mesma.",
+          "Essa experiência pessoal é o que diferencia a condução das aulas: sem perfeição de vitrine, com presença real. Ela ensina do lugar de quem também passou por recomeços, por dias difíceis, por fases em que a prática sumiu e voltou.",
+        ],
+      },
+      {
+        question: "Tenho uma dúvida que não está aqui. Como falo com vocês?",
+        answer: [
+          "Manda uma mensagem direto no WhatsApp ou pelo Instagram. A Bruna e a equipe respondem pessoalmente, sem chatbot e sem atendimento automatizado.",
+          "Se ainda tem dúvida, fala com a gente. Estamos aqui.",
+        ],
+      },
+    ],
+  },
+];
 
 function CTAButton({
   href,
@@ -111,12 +248,12 @@ function Index() {
         {/* Mobile background: place the provided image at public/assets/hero-mobile.jpg */}
         <div
           className="absolute inset-0 w-full h-full bg-top bg-cover md:hidden"
-          style={{ backgroundImage: `url(${mobile})` }}
+          style={{ backgroundImage: `url(${heroMobileBgImg})` }}
           aria-hidden
         />
         {/* Desktop / md+ background */}
         <img
-          src={heroImg}
+          src={heroDesktopImg}
           alt="Mulher praticando yoga ao ar livre"
           className="absolute inset-0 w-full h-full object-cover hidden md:block"
           width={1920}
@@ -169,7 +306,7 @@ function Index() {
               <div className="relative overflow-hidden rounded-[2.6rem] bg-ink p-2 shadow-elegant border-[3px] border-primary/80">
                 <div className="absolute top-3 left-1/2 z-10 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-ink" />
                 <img
-                  src={mobilePreview}
+                  src={platformMobilePreviewImg}
                   alt="Tela mobile da plataforma Abhyāsa Club"
                   loading="lazy"
                   className="block h-auto w-full rounded-[2.1rem]"
@@ -192,7 +329,7 @@ function Index() {
 
                 <div className="bg-background">
                   <img
-                    src={platformPreview}
+                    src={platformDesktopPreviewImg}
                     alt="Preview da plataforma Abhyāsa Club no computador"
                     loading="lazy"
                     className="w-full h-auto"
@@ -238,19 +375,19 @@ function Index() {
                 tag: "Iniciante",
                 title: "Começar com gentileza",
                 desc: "Aulas curtas, fundamentos, respiração. Para quem nunca praticou — ou está voltando depois de muito tempo.",
-                img: g1,
+                img: levelsBeginnerImg,
               },
               {
                 tag: "Intermediário",
                 title: "Aprofundar a prática",
                 desc: "Flows mais longos, sequências dinâmicas, vinyasa e alinhamento refinado. Para construir consistência.",
-                img: g2,
+                img: levelsIntermediateImg,
               },
               {
                 tag: "Avançado",
                 title: "Explorar o limite",
                 desc: "Inversões, equilíbrios, posturas complexas. Para quem quer ir além — com segurança e técnica.",
-                img: g5,
+                img: levelsAdvancedImg,
               },
             ].map((lvl, i) => (
               <div
@@ -262,7 +399,7 @@ function Index() {
                     src={lvl.img}
                     alt={lvl.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700`}
                   />
                 </div>
                 <div className="p-7">
@@ -283,22 +420,16 @@ function Index() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src={g6}
+              src={inversionsFeatureImg}
               alt="Handstand na praia"
               loading="lazy"
               className="rounded-2xl shadow-elegant w-full h-[600px] object-cover"
             />
-            <div className="absolute -bottom-8 -right-8 hidden md:block bg-card rounded-2xl p-6 shadow-elegant max-w-[220px] border border-border">
-              <p className="font-serif text-3xl text-accent">+ 12</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">
-                trilhas avançadas
-              </p>
-            </div>
           </div>
           <div>
             <SectionLabel>Aprofunde-se</SectionLabel>
             <h2 className="font-serif text-3xl md:text-6xl text-primary leading-[1.05] text-balance">
-              Aprenda <span className="italic text-accent">handstand</span>, inversões e posturas
+              Aprenda inversões e posturas
               complexas.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
@@ -307,7 +438,7 @@ function Index() {
             </p>
             <ul className="mt-8 space-y-4 text-foreground/80">
               {[
-                "Caminho passo-a-passo para o handstand",
+                // "Caminho passo-a-passo para o handstand",
                 "Inversões — sirsasana, pincha, sarvangasana",
                 "Backbends profundos e mobilidade de quadril",
                 "Drills de força e ativação de core",
@@ -334,21 +465,35 @@ function Index() {
               Feedbacks dos alunos
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-            {[fb2, fb5, fb6].map((img, i) => (
-              <div
-                key={i}
-                className="rounded-xl overflow-hidden bg-card shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1"
-              >
-                <img
-                  src={img}
-                  alt={`Depoimento ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+            className="mx-auto max-w-6xl px-12 md:px-16"
+          >
+            <CarouselContent>
+              {feedbackImages.map((img, i) => (
+                <CarouselItem
+                  key={img}
+                  className="basis-[82%] sm:basis-[58%] md:basis-[42%] lg:basis-[30%]"
+                >
+                  <div className="overflow-hidden rounded-xl bg-card shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1">
+                    <div className="aspect-[4/5] w-full bg-transparent p-2">
+                      <img
+                        src={img}
+                        alt={`Depoimento ${i + 1}`}
+                        loading="lazy"
+                        className="h-full w-full rounded-lg object-contain"
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 border-border bg-background/90 text-primary hover:bg-background disabled:opacity-30" />
+            <CarouselNext className="right-0 border-border bg-background/90 text-primary hover:bg-background disabled:opacity-30" />
+          </Carousel>
         </div>
       </section>
 
@@ -397,6 +542,50 @@ function Index() {
                 </div>
                 <h3 className="font-serif text-2xl text-primary mb-3">{f.t}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-32 px-6 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mb-16 md:mb-20">
+            <SectionLabel>Perguntas frequentes</SectionLabel>
+            <h2 className="font-serif text-3xl md:text-6xl text-primary text-balance">
+              Tira dúvidas antes de dar o próximo passo.
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+            {faqSections.map((section) => (
+              <div key={section.title} className="rounded-3xl border border-border bg-card p-8 md:p-10">
+                <p className="text-xs uppercase tracking-[0.28em] text-accent mb-6">{section.title}</p>
+                <Accordion type="single" collapsible className="w-full">
+                  {section.items.map((item, index) => (
+                    <AccordionItem key={item.question} value={`${section.title}-${index}`} className="border-border/70">
+                      <AccordionTrigger className="py-5 font-sans text-base md:text-[1.02rem] font-normal leading-snug tracking-tight text-primary hover:no-underline">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+                        {item.answer.map((paragraph) =>
+                          item.highlight &&
+                          paragraph === "A única coisa que você precisa trazer é o seu corpo, exatamente como ele é hoje." ? (
+                            <blockquote
+                              key={paragraph}
+                              className="rounded-2xl border border-accent/30 bg-accent/10 px-5 py-4 font-medium text-primary"
+                            >
+                              "{paragraph}"
+                            </blockquote>
+                          ) : (
+                            <p key={paragraph}>{paragraph}</p>
+                          ),
+                        )}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
             ))}
           </div>
@@ -564,7 +753,7 @@ function Index() {
                 className="group rounded-2xl border border-border bg-card p-6 hover:bg-secondary/40 transition-colors"
               >
                 <summary className="cursor-pointer flex items-start justify-between gap-4 list-none">
-                  <span className="max-w-[calc(100%-2rem)] text-[1.05rem] md:text-[1.15rem] font-medium leading-snug tracking-tight text-primary">
+                  <span className="max-w-[calc(100%-2rem)] font-sans text-base md:text-[1.02rem] font-normal leading-snug tracking-tight text-primary">
                     "{item.q}"
                   </span>
                   <span className="text-accent text-2xl leading-none group-open:rotate-45 transition-transform">
@@ -583,10 +772,10 @@ function Index() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2 relative">
             <img
-              src={backpainImg}
+              src={ebookBackPainImg}
               alt="Yoga para alívio de dor nas costas"
               loading="lazy"
-              className="rounded-2xl shadow-elegant w-full h-[600px] object-cover"
+              className="rounded-2xl shadow-elegant w-full h-[600px] object-cover object-[22%_100%]"
             />
           </div>
           <div className="lg:order-1">
@@ -615,7 +804,7 @@ function Index() {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16 items-center">
           <div className="lg:col-span-2">
             <img
-              src={bruna2}
+              src={aboutBrunaPortraitImg}
               alt="Bruna Prais"
               loading="lazy"
               className="rounded-2xl shadow-elegant w-full"
@@ -688,17 +877,16 @@ function Index() {
 
       {/* WHATSAPP FLOATING BUTTON */}
       <a
-        href="https://wa.me/5500000000000?text=Oi%20Bruna!%20Quero%20saber%20mais%20sobre%20as%20aulas%201%3A1"
+        href="https://wa.me/556296563484?text=Oi%20Bruna!%20Quero%20saber%20mais%20sobre%20as%20aulas%201%3A1"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale no WhatsApp sobre aulas 1:1"
         className="fixed bottom-5 right-5 z-50 group flex items-center gap-3"
       >
-        <span className="hidden sm:inline-block bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full shadow-elegant">
+        <span className="inline-block bg-primary text-primary-foreground text-[10px] sm:text-xs tracking-[0.2em] uppercase px-3 sm:px-4 py-2 rounded-full shadow-elegant">
           Aulas 1:1
         </span>
         <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-elegant hover:scale-105 transition-transform">
-          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
           <svg
             viewBox="0 0 24 24"
             className="w-7 h-7 relative"
