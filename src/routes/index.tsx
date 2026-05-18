@@ -44,8 +44,8 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CTA_MENSAL = "https://pay.kiwify.com.br/IaED2lH";
-const CTA_ANUAL = "https://pay.kiwify.com.br/Kb2C0xd";
+const CTA_ANUAL = "https://pay.kiwify.com.br/IaED2lH";
+const CTA_MENSAL = "https://pay.kiwify.com.br/Kb2C0xd";
 
 const feedbackImages = Object.entries(
   import.meta.glob("../assets/abhyasa/feedback-*", {
